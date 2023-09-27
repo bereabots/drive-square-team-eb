@@ -26,7 +26,31 @@ int main(int argc, const char *argv[])
      *
      * to sleep for "secs" seconds (replace with desired number of seconds).
      */
-
+    
+    int i = 0;
+    float vx =0.3;
+    float vy = 0.3;
+    int time = 3; 
+    for (i; i<3;i++){
+        robot.drive(vx,0,0);
+        sleepFor(time);
+        robot.drive(0,0,0);
+        sleepFor(2);
+        robot.drive(0,vy,0);
+        sleepFor(time);
+        robot.drive(0,0,0);
+        sleepFor(2);
+        robot.drive(-vx,0,0);
+        sleepFor(time);
+        robot.drive(0,0,0);
+        sleepFor(2);
+        robot.drive(0,-vy,0);
+        sleepFor(time);
+        robot.drive(0,0,0);
+        sleepFor(2);
+    }
+    
+  
     // Stop the robot.
     std::cout << "Stopping the robot!!" << std::endl;
     robot.stop();
